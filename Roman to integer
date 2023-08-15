@@ -1,0 +1,31 @@
+function integerValue (c) {
+    if (c === "I") return 1
+    if (c === "V") return 5
+    if (c === "X") return 10
+    if (c === "L") return 50
+    if (c === "C") return 100
+    if (c === "D") return 500
+    if (c === "M") return 1000
+    else return -1
+}
+
+function romanToInteger (S) {
+  let output = 0
+  for (let i=0; i<S.length; i++) {
+    let curr = integerValue(S[i])
+
+    if (i+1 < S.length) {
+        let next = integerValue(S[i+1])
+        if (curr >= next) {
+            output = output + curr;
+        } else {
+            output = output + next - curr;
+            i++
+        }
+    } else output = output + curr
+  }
+  return output
+}
+
+console.log(romanToInteger('MCMXCIV'))
+console.log(romanToInteger('LVIII'))
