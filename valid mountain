@@ -1,0 +1,45 @@
+// Travessing from opposite ends
+
+
+function validMountain(arr) {
+   let n=arr.length, right=n-1, left=0;
+
+   while (left < n-1 && arr[left] < arr[left+1]) {
+    left++
+   }
+
+   while (right > 0 && arr[right] < arr[right - 1]) {
+    right--
+   }
+
+   if (left > 0 && left===right && right< n-1) {
+    return true 
+   } else return false
+
+}
+
+console.log(validMountain([5,6,71,21,17,11,0]))
+
+
+
+Travessing from left to right 
+
+function climbMountain (arr) {
+    let climb = 0, n=arr.length;
+
+    while (climb<n-1 && arr[climb] < arr[climb+1]) {
+        climb++
+    }
+    if (climb === 0 || climb ===n-1) {
+        return false 
+    }
+    
+    while (climb < n-1 && arr[climb] > arr[climb+1]) {
+        climb++
+    }
+    if (climb=== n-1) {
+        return true 
+    } else return false
+}
+
+console.log(climbMountain([5,6,71,201,17,101,0]))
