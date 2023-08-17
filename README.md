@@ -1,2 +1,2 @@
 # codewar-solutions
-solutions to my codewar algorithms
+solutions to my hackerank and codewar algorithms
