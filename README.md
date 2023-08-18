@@ -1,2 +1,2 @@
 # codewar-solutions
-solutions to my codewar algorithms 2023
+solutions to my hackerrank and codewar algorithms 2023
