@@ -1,0 +1,81 @@
+// let head;
+
+class Node {
+    constructor(d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+
+// insert node at beginning of linked list 
+
+function push(new_data) {
+    let new_node = new Node(new_data);
+
+    new_node.next = head;
+
+    head = new_node
+}
+
+// insert node after a given node in a linked list 
+
+function insertAfterNode(prev_node, new_data) {
+    
+    if (prev_node === null) {
+        return;
+    }
+
+    let new_node = new Node(new_data);
+
+    new_node.next = prev_node.next; 
+
+    prev_node.next = new_node;
+}
+
+// insert node at the end of linked list 
+
+function append(new_data) {
+    
+    let new_node = new Node(new_data);
+
+    if (head === null) {
+        head = new_node;
+        return; 
+    }
+
+    new_node.next = null;
+
+    let last = head; 
+
+    while (last.next != null) {
+        last = last.next;
+    }
+
+    last.next = new_node; 
+    return;
+}
+
+
+function appendNode(new_data) {
+    // allocate the node and put in the data 
+    let new_node = new Node(new_data);
+
+    // if empty, then make new_node as head 
+    if (head === null) {
+        head = new_node;
+        return;
+    }
+
+    // since new_node is going to be the last Node, make head of it as null 
+    new_node.next = null;
+
+    // else traverse till the last node 
+    let last = head 
+
+    while (last.next !=null) {
+        last = last.next;
+
+        last.next = new_node; 
+        return;
+    }
+}
