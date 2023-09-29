@@ -1,0 +1,43 @@
+// ITERATIVE APPROACH FOR FINDING LENGTH OF A LIST 
+
+let head;
+
+class Node {
+    constructor(val) {
+        this.data = val;
+        this.next = null;
+    }
+}
+
+// function to insert new node at front of list 
+
+function push(new_data) {
+    let new_node = new Node(new_data)
+
+    new_node.next = head;
+
+    head = new_node;
+}
+
+
+// function to count the number of nodes in a list 
+
+function getCount() {
+    let count = 0
+
+    while (head != null) {
+        count++;
+
+        head = head.next;
+    }
+    return count
+}
+
+
+push(4)
+push(4)
+push(4)
+push(4)
+push(4)
+
+console.log(getCount())
